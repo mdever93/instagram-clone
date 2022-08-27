@@ -1,10 +1,11 @@
 import React from 'react'
 import TimelinePost from './TimelinePost'
-import BottomNav from './BottomNav'
+import TimelineNav from './TimelineNav'
 
 function Timeline() {
   return (
     <div className='timeline'>
+      <TimelineNav />
       <TimelinePost />
       <TimelinePost />
     </div>
