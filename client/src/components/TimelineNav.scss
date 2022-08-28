@@ -1,11 +1,28 @@
 .timeline-nav {
-  padding: 10px;
-  display: flex;
+  padding: 15px;
+  padding-bottom: 10px;
+  padding-right: 0;
+  // display: flex;
   border-bottom: 1px solid var(--primary-color);
   position: sticky;
   top: 0;
   background-color: var(--background-color);
+  align-items: center;
+  font-size: 1.5rem;
+  
   .logo {
     height: 40px;
+  }
+
+  svg {
+    margin-right: 20px;
+  }
+
+  .create-post {
+    svg {
+      border: 2px solid var(--font-color);
+      border-radius: 35%;
+    }
+    margin-left: auto;
   }
 }
