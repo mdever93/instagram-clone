@@ -1,4 +1,4 @@
-.comments-item {
+.comments-item, .reply-item {
   padding: 15px;
 
   .content {
@@ -20,5 +20,7 @@
     }
   }
 
-
+  .reply-item {
+    padding-right: 0;
+  }
 }
