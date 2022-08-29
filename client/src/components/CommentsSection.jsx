@@ -24,6 +24,7 @@ const CommentsSection = () => {
         <CommentsItem />
         <CommentsItem />
         <CommentsItem />
+        <CommentsItem />
       </div>
       <div className='new-comment flex'>
       <img className='avatar large' src="https://avatars.dicebear.com/api/pixel-art/1001.svg" alt="" />

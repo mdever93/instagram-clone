@@ -17,6 +17,9 @@
     padding: 15px;
     font-size: 1.5rem;
     border-bottom: 1px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
 
     h1 {
       margin: 0;
@@ -52,6 +55,7 @@
     padding: 5px 15px;
     position: sticky;
     bottom: 0px;
+    background-color: var(--background-color);
 
     input {
       margin-left: 10px;
