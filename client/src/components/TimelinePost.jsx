@@ -9,6 +9,8 @@ import TurnedInNotSharpIcon from '@mui/icons-material/TurnedInNotSharp';
 import "./TimelinePost.scss";
 
 function TimelinePost(props) {
+  const caption = (<p><span>Username</span> Caption goes here Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum vel velit nemo, distinctio possimus quisquam non delectus corrupti vitae rerum fugiat! Rem rerum ipsum minima illo culpa error doloribus.</p>
+  ) 
   return (
     <div className='timeline-post'>
       <div className='header flex'>
@@ -25,7 +27,7 @@ function TimelinePost(props) {
         <div className='like'>
           <FavoriteBorderRoundedIcon fontSize='inherit' />
         </div>
-        <div className='comment'>
+        <div className='comment' onClick={props.comments}>
           <ModeCommentOutlinedIcon fontSize='inherit' />
         </div>
         <div className='send'>
@@ -37,7 +39,8 @@ function TimelinePost(props) {
       </div>
       <span className='likes bold'>9,567 likes</span>
       <div className='caption'>
-        <p><span>Username</span> Caption goes here Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum vel velit nemo, distinctio possimus quisquam non delectus corrupti vitae rerum fugiat! Rem rerum ipsum minima illo culpa error doloribus.</p>
+        {caption}
+        {/* <p><span>Username</span> Caption goes here Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum vel velit nemo, distinctio possimus quisquam non delectus corrupti vitae rerum fugiat! Rem rerum ipsum minima illo culpa error doloribus.</p> */}
       </div>
     </div>
   )

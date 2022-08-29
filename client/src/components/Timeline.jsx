@@ -2,12 +2,14 @@ import React from 'react'
 import TimelinePost from './TimelinePost'
 import TimelineNav from './TimelineNav'
 
-function Timeline() {
+import './Timeline.scss'
+
+function Timeline(props) {
   return (
     <div className='timeline'>
       <TimelineNav />
-      <TimelinePost />
-      <TimelinePost />
+      <TimelinePost comments={props.comments} />
+      <TimelinePost comments={props.comments} />
     </div>
   )
 }

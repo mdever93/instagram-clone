@@ -12,12 +12,20 @@
 
 }
 
+.flex {
+  display: flex;
+}
+
+.bold {
+  font-weight: 600;
+}
+
 body {
   background: var(--background-color);
   color: var(--font-color);
-  transition: background-color 0.5s
+  transition: background-color 0.5s;
 }
 
-.flex {
-  display: flex;
+.app {
+  height: 100vh;
 }
