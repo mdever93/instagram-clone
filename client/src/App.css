@@ -2,6 +2,10 @@
   --font-color: #333;
   --primary-color: lightgrey;
   --background-color: whitesmoke;
+  --button-color: rgba(81, 174, 255);
+  --button-color-hover: rgba(81, 174, 255, 0.8);
+  --button-color-active: rgba(81, 174, 255, 0.9);
+  --button-color-disabled: rgba(81, 174, 255, 0.3);
 }
 
 [data-theme="dark"] {
