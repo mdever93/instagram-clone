@@ -1,4 +1,4 @@
-.login {
+.login, .signup {
   flex-direction: column;
   // width: 90%;
   height: 100%;
@@ -10,6 +10,17 @@
     width: 50%;
     margin: 40px;
     margin-top: 0;
+  }
+
+  p {
+    text-align: center;
+    color: lightgrey;
+  }
+
+  .tagline {
+    margin: 20px;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
   }
 
   input, button {
@@ -44,18 +55,24 @@
     margin-bottom: 100px;
   }
 
-  .sign-up {
+  .footer {
     width: 100%;
     position: absolute;
     bottom: 0;
     padding: 15px;
     border-top: 1px solid var(--primary-color);
-    text-align: center;
+    // text-align: center;
     font-size: .9rem;
 
     span {
       color: var(--button-color);
 
     }
+  }
+}
+
+.signup {
+  .logo {
+    margin: 0;
   }
 }
