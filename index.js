@@ -33,3 +33,10 @@ const db = new Pool({
 db.connect()
   .then(() => console.log('db connected'))
   .catch(err => console.error('db connection error', err.stack));
+
+const newUser = require('./routes/new_user');
+app.use('/api/new_user', newUser(db));
+
+server.listen(port, function () {
+  console.log(`Listening on http://localhost: ${port}`);
+});
