@@ -49,7 +49,7 @@ const SignUp = () => {
           setPassword(e.target.value)
         }}
       />
-      <button className='login_btn bold' type="submit" onClick={onSubmit}>Log in</button>
+      <button className='login_btn bold' type="submit" onClick={onSubmit} disabled={!(email && username && password)}>Sign up</button>
       <div className='footer'>
         <p> Already have an account? <span className='bold'>Sign In.</span></p>
       </div>

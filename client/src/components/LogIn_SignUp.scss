@@ -53,6 +53,10 @@
     font-size: 1rem;
     margin: 15px;
     margin-bottom: 100px;
+
+    &:disabled {
+      background-color: var(--button-color-disabled);
+    }
   }
 
   .footer {
