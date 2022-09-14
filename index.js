@@ -36,6 +36,8 @@ db.connect()
 
 const newUser = require('./routes/new_user');
 app.use('/api/new_user', newUser(db));
+const login = require('./routes/login');
+app.use('/api/login', login(db));
 
 server.listen(port, function () {
   console.log(`Listening on http://localhost: ${port}`);

@@ -16,8 +16,8 @@ function App() {
   }
   return (
     <div className="app">
-      <SignUp />
-      {/* <LogIn /> */}
+      {/* <SignUp /> */}
+      <LogIn />
       {/* { page === 'timeline' && <Timeline comments={() => comments()} />}
       {page === 'comments' && <CommentsSection /> }
       { page !== 'comments' && <BottomNav />} */}
