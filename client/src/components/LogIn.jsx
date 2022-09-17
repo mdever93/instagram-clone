@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 import './LogIn_SignUp.scss'
 
-const LogIn = () => {
+const LogIn = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -13,7 +14,12 @@ const LogIn = () => {
     console.log(username, password);
     return axios.post('/api/login', {username, password})
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
+        if (res.data.status) {
+          Cookies.set('user', true)
+          props.setAuth(true)
+        }
+        console.log('COOKIES', Cookies.get('user'));
       })
 
   }

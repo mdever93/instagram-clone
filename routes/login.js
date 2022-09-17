@@ -9,7 +9,11 @@ const authenticateUser = (db, username, password) => {
     .query(queryStr, queryParam)
     .then((data) => {
       console.log(data.rows);
-      return data.rows[0].id;
+      if (data.rows.length === 0) {
+        return false;
+      } else {
+        return data.rows[0].id;
+      }
     })
     .catch(err => {
       console.log(err.message);
@@ -25,8 +29,14 @@ module.exports = (db) => {
 
     authenticateUser(db, username, password)
       .then((result) => {
-        req.session.user_id = result;
-        res.json(req.body);
+        if (result) {
+          console.log('RESULT', result);
+          req.session.user_id = result;
+          res.json({status:true})
+          // res.end('Login successful')
+        } else {
+          res.json({status: false})
+        }
       })
   })
 
