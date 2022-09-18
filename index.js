@@ -10,6 +10,13 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
 const { Pool } = require('pg');
+const admin = require("firebase-admin");
+const serviceAccount = require("./firebase-config/instagram-images-1b68c-firebase-adminsdk-m90ff-30670a73e7.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
 
 app.use(cors({ origin: `*`, credentials: true }));
 app.use(helmet());
