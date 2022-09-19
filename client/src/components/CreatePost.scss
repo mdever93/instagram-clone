@@ -11,12 +11,16 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--primary-color);
-    padding: 15px 15px 5px 15px;
+    padding: 15px 15px 10px 15px;
     // position: absolute;
     // top: 0;
 
     .close {
       font-size: 2rem;
+    }
+
+    .back {
+      font-size: 1.5rem;
     }
 
     p {
@@ -42,6 +46,35 @@
     img {
       width: 100%;
       margin-bottom: 10px;
+    }
+  }
+
+  .caption-section {
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-color);
+
+    img {
+      height: 75px;
+      // margin: 15px 10px 15px 20px;
+      border: 1px solid var(--primary-color);
+    }
+
+    .caption {
+      width: 100%;
+      height: 100%;
+      margin-left: 10px;
+      font-family: inherit;
+      font-size: 1.1rem;
+      color: inherit;
+      background-color: transparent;
+      border: none;
+      resize: none;
+      outline: none;
+
+      &:focus::placeholder {
+        color: transparent;
+      }
     }
   }
 }
