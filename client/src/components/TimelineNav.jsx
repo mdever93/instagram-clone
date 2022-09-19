@@ -6,13 +6,13 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 
 import './TimelineNav.scss'
 
-const TimelineNav = () => {
+const TimelineNav = (props) => {
   return (
     <div className='timeline-nav flex'>
       {/* <img className='logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png?20160616034027" alt="" /> */}
       <img className='logo' src="https://www.pngkey.com/png/full/1-13459_instagram-font-logo-white-png-instagram-white-text.png" alt="" />
       <KeyboardArrowDownRoundedIcon fontSize='inherit' />
-      <div className='create-post flex'>
+      <div className='create-post flex' onClick={props.create}>
       <AddRoundedIcon fontSize='inherit' />
       </div>
       <FavoriteBorderRoundedIcon fontSize='inherit' />

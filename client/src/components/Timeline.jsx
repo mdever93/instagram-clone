@@ -7,7 +7,7 @@ import './Timeline.scss'
 function Timeline(props) {
   return (
     <div className='timeline'>
-      <TimelineNav />
+      <TimelineNav create={props.create} />
       <TimelinePost comments={props.comments} />
       <TimelinePost comments={props.comments} />
     </div>
