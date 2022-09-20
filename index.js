@@ -20,8 +20,8 @@ admin.initializeApp({
 
 app.use(cors({ origin: `*`, credentials: true }));
 app.use(helmet());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(express.static("public"));
 app.use(morgan('dev'));
 app.use(cookieSession({
@@ -45,6 +45,8 @@ const newUser = require('./routes/new_user');
 app.use('/api/new_user', newUser(db));
 const login = require('./routes/login');
 app.use('/api/login', login(db));
+const posts = require('./routes/posts');
+app.use('/api/posts', posts(db));
 
 server.listen(port, function () {
   console.log(`Listening on http://localhost: ${port}`);

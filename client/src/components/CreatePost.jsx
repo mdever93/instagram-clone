@@ -7,6 +7,7 @@ import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 
 
 import './CreatePost.scss'
+import axios from 'axios';
 
 const CreatePost = (props) => {
   const [uploadedImage, setUploadedImage] = useState(null)
@@ -40,6 +41,20 @@ const CreatePost = (props) => {
       setCaption('')
     }
   }
+
+  const sendToServer = () => {
+    if (uploadedImage && caption) {
+      console.log('click');
+      const post = {
+        image: uploadedImage,
+        caption: caption
+      }
+      axios.post('/api/posts', post)
+      .then((res) => {
+        console.log(res);
+      })
+    }
+  }
   return (
     <div className='create-post flex'>
       <div className='header flex'>
@@ -47,7 +62,7 @@ const CreatePost = (props) => {
         {showCaptionInput && <ArrowBackIosRoundedIcon className='back' onClick={() => back()} fontSize='inherit' />}
         <p className='bold'>New post</p>
         {!showCaptionInput && <p className='bold next' onClick={() => next()}>Next</p>}
-        {showCaptionInput && <p className='bold next' onClick={() => console.log(caption)}>Share</p>}
+        {showCaptionInput && <p className='bold next' onClick={() => sendToServer()}>Share</p>}
       </div>
       {showCaptionInput ? (
         <div className='caption-section flex'>
