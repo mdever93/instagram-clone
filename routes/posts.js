@@ -27,7 +27,7 @@ module.exports = (db) => {
 
   router.post('/', (req, res) => {
     console.log(req.body);
-    res.send('Data received')
+    // res.send('Data received')
     const userId = req.session.user_id;
     const caption = req.body.caption;
     const token = req.body.token;

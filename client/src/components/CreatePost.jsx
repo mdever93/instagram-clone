@@ -67,6 +67,11 @@ const CreatePost = (props) => {
         axios.post('api/posts', {caption, token: res.data.token})
         .then((res) => {
           console.log(res);
+          // setUploadedImage(null)
+          // setShowCaptionInput(false)
+          // setCaption('')
+          // setFile(null)
+          props.timeline()
         })
       })
       .catch((err) => console.log(err))
