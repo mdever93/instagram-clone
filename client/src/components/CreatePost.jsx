@@ -13,10 +13,12 @@ const CreatePost = (props) => {
   const [uploadedImage, setUploadedImage] = useState(null)
   const [showCaptionInput, setShowCaptionInput] = useState(false)
   const [caption, setCaption] = useState('')
+  const [file, setFile] = useState(null)
 
   const addImageToPost = (e) => {
     const reader = new FileReader();
     if (e.target.files[0]) {
+      setFile(e.target.files[0]);
       reader.readAsDataURL(e.target.files[0]);
     }
 
@@ -45,14 +47,29 @@ const CreatePost = (props) => {
   const sendToServer = () => {
     if (uploadedImage && caption) {
       console.log('click');
+      const formData = new FormData();
+      formData.append('image', file, file.name);
+      // formData.append('fileName', file.name);
+      // formData.append('caption', caption);
+      const config = {
+        headers: {
+          'content-type': 'multipart/form-data',
+        },
+      }
+      console.log(formData);
       const post = {
         image: uploadedImage,
         caption: caption
       }
-      axios.post('/api/posts', post)
+      axios.post('/api/upload_photo', formData)
       .then((res) => {
         console.log(res);
+        axios.post('api/posts', {caption, token: res.data.token})
+        .then((res) => {
+          console.log(res);
+        })
       })
+      .catch((err) => console.log(err))
     }
   }
   return (

@@ -10,12 +10,17 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
 const { Pool } = require('pg');
-const admin = require("firebase-admin");
-const serviceAccount = require("./firebase-config/instagram-images-1b68c-firebase-adminsdk-m90ff-30670a73e7.json");
+// const { initializeApp, cert } = require('firebase-admin/app');
+// const { getStorage } = require('firebase-admin/storage');
+// const serviceAccount = require("./firebase-config/instagram-images-1b68c-firebase-adminsdk-m90ff-30670a73e7.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+// initializeApp({
+//   credential: cert(serviceAccount),
+//   storageBucket: 'instagram-images-1b68c.appspot.com/'
+// });
+
+// const bucket = getStorage().bucket();
+
 
 
 app.use(cors({ origin: `*`, credentials: true }));
@@ -47,6 +52,9 @@ const login = require('./routes/login');
 app.use('/api/login', login(db));
 const posts = require('./routes/posts');
 app.use('/api/posts', posts(db));
+
+const { uploadPhoto } = require('./handlers/upload')
+app.post('/api/upload_photo', uploadPhoto);
 
 server.listen(port, function () {
   console.log(`Listening on http://localhost: ${port}`);
