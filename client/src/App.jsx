@@ -5,6 +5,7 @@ import CommentsSection from './components/CommentsSection';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import CreatePost from './components/CreatePost';
+import Profile from './components/Profile';
 import Cookies from 'js-cookie';
 
 import './App.css';
@@ -19,9 +20,9 @@ function App() {
     if (userLoggedIn) {
       console.log(userLoggedIn);
       setAuth(true)
-    }  
+    }
   }, [])
-  
+
 
   const comments = () => {
     setPage('comments')
@@ -34,14 +35,22 @@ function App() {
   const timeline = () => {
     setPage('timeline')
   }
+
+  const profile = () => {
+    setPage('profile')
+  }
   return (
-    <div className="app">
+    <div className="app flex">
+      <div className='app-container flex'>
       {/* <SignUp /> */}
       {!auth && <LogIn setAuth={setAuth} />}
       {auth && page === 'timeline' && <Timeline comments={() => comments()} create={() => create()} />}
       {/* {page === 'comments' && <CommentsSection />} */}
       {auth && page == 'create' && <CreatePost timeline={() => timeline()} />}
-      {auth && page == 'timeline' && <BottomNav />}
+      {auth && page == 'profile' && <Profile />}
+      {/* {auth && page == 'timeline' && <BottomNav profile={() => profile()} />} */}
+      </div>
+      {auth && <BottomNav profile={() => profile()} />}
     </div>
   );
 }
