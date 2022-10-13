@@ -56,7 +56,7 @@ function App() {
       {auth && page == 'search' && <Search />}
       {/* {auth && page == 'timeline' && <BottomNav profile={() => profile()} />} */}
       </div>
-      {auth && <BottomNav profile={() => profile()} timeline={() => timeline()} search={() => search()} />}
+      {auth && <BottomNav profile={() => profile()} timeline={() => timeline()} search={() => search()} page={page} />}
     </div>
   );
 }
