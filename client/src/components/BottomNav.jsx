@@ -7,9 +7,9 @@ import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 const BottomNav = (props) => {
   return (
     <div className='bottom-nav'>
-      <HomeOutlinedIcon fontSize='inherit' />
-      <SearchRoundedIcon fontSize='inherit' />
-      <AccountCircleTwoToneIcon className='profile' onClick={props.profile} fontSize='inherit' />
+      <HomeOutlinedIcon onClick={props.timeline} fontSize='inherit' />
+      <SearchRoundedIcon onClick={props.search} fontSize='inherit' />
+      <AccountCircleTwoToneIcon onClick={props.profile} fontSize='inherit' />
     </div>
   )
 }

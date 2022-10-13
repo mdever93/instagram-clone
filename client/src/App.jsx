@@ -6,6 +6,7 @@ import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import CreatePost from './components/CreatePost';
 import Profile from './components/Profile';
+import Search from './components/Search';
 import Cookies from 'js-cookie';
 
 import './App.css';
@@ -36,6 +37,10 @@ function App() {
     setPage('timeline')
   }
 
+  const search = () => {
+    setPage('search')
+  }
+
   const profile = () => {
     setPage('profile')
   }
@@ -48,9 +53,10 @@ function App() {
       {/* {page === 'comments' && <CommentsSection />} */}
       {auth && page == 'create' && <CreatePost timeline={() => timeline()} />}
       {auth && page == 'profile' && <Profile />}
+      {auth && page == 'search' && <Search />}
       {/* {auth && page == 'timeline' && <BottomNav profile={() => profile()} />} */}
       </div>
-      {auth && <BottomNav profile={() => profile()} />}
+      {auth && <BottomNav profile={() => profile()} timeline={() => timeline()} search={() => search()} />}
     </div>
   );
 }
