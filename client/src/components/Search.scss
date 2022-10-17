@@ -1,0 +1,38 @@
+.search-page {
+  flex-direction: column;
+  width: 100%;
+
+  .header {
+    padding: 15px 20px;
+
+    svg {
+      position: absolute;
+      // top: 16px;
+      margin: 6px;
+      color: grey;
+      font-size: 1.3rem;
+    }
+
+    .search {
+      width: 100%;
+      font-size: 1.2rem;
+      padding: 6px 30px;
+      background-color: var(--primary-color);
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      color: lightgrey;
+    }
+  }
+
+  .suggested-posts {
+    display: grid;
+    grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    gap: 1px;
+
+    img {
+      background-color: lightgrey;
+    }
+
+  }
+}
